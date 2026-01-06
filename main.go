@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 // package level variable
 var name string = "Ashutosh"
@@ -19,8 +22,19 @@ func main() {
 
 	whatWasSaid, theOtherThingThatWasSaid := saySomething()
 	fmt.Println("The function returned", whatWasSaid, theOtherThingThatWasSaid)
+
+	var color string
+	color = "Green"
+	log.Println("color is set to", color)
+	changeUsingPointer(&color)
+	log.Println("after func call, color is set to", color)
 }
 
 func saySomething() (string, string) {
 	return "Something", "else"
+}
+
+func changeUsingPointer(s *string) {
+	newValue := "Red"
+	*s = newValue
 }
