@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"time"
 )
@@ -24,4 +25,5 @@ func createUser() {
 		BirthDate: time.Date(1998, time.March, 28, 0, 0, 0, 0, time.UTC),
 	}
 	log.Println(user.FirstName, user.LastName, user.Age, user.BirthDate)
+	fmt.Println("ends")
 }
